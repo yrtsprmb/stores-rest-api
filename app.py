@@ -14,9 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI']
 app.secret_key = 'jose'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 jwt = JWT(app, authenticate, identity) # kreiert einen neuen Endpoint, wenn aufgerufen sendet username und passwort
 
